@@ -1,6 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
-
 @import '@angular/cdk/overlay-prebuilt.css';
 
+/*Estilos bancolombia*/
+@import 'https://library-sdb.apps.bancolombia.com/bds/7.17.6/bds.min.css';
 
+@import 'https://library-sdb.apps.bancolombia.com/bds/7.17.6/bds-black.min.css';
+
+@import 'https://library-sdb.apps.bancolombia.com/sufi/7.17.6/sufi.min.css';
+
+
+@layer components {
+  /* Define estilos base para el container */
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  /* Para pantallas pequeñas */
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+
+  /* Para pantallas medianas */
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+
+  /* Para pantallas grandes */
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+    }
+  }
+
+  /* Para pantallas extra grandes */
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1024px; /* Según tu configuración, xl es 1024px */
+    }
+  }
+}

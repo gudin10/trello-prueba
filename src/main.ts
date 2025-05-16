@@ -4,6 +4,8 @@ import { AppComponent } from './app/app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { importProvidersFrom } from '@angular/core';
 
+
+
 bootstrapApplication(AppComponent, {
   ...appConfig,
   providers:[
