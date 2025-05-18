@@ -2,6 +2,9 @@
   <app-navbar></app-navbar>
   <div class="w-full grow bg-white-600 p-6">
     <h1 class="text-xl text-gray-700 font-semibold italic mb-5">Table</h1>
+
+    <input type="search" class="mb-5 p-2 border border-gray-300 rounded" [formControl]="input" placeholder="Search...">
+
     <table class="w-full text-sm text-left rtl:text-right text-gray-500" cdk-table [dataSource]="dataSource">
       <tr cdk-header-row class="text-xs text-gray-700 uppercase bg-gray-50" *cdkHeaderRowDef="columns"></tr>
       <tr cdk-row class="bg-white border-b" *cdkRowDef="let row; columns: columns"></tr>

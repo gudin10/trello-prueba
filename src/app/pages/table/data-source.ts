@@ -5,12 +5,14 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class DataSourceProduct extends DataSource<Product> {
 
   data = new BehaviorSubject<Product[]>([]);
+  originalData : Product[] = [];
 
   connect(): Observable<Product[]> {
     return this.data;
   }
 
   init(products: Product[]) {
+    this.originalData = products;
     this.data.next(products);
   }
 
@@ -32,6 +34,15 @@ export class DataSourceProduct extends DataSource<Product> {
       this.data.next(products);
     }
 
+  }
+
+  find(query: string){
+    const filteredProducts = this.originalData
+    .filter(item => {
+      const word = `${item.id}-${item.title}-${item.price}`;
+      return word.toLowerCase().includes(query.toLowerCase())
+    });
+    this.data.next(filteredProducts);
   }
 
   disconnect(){ }
